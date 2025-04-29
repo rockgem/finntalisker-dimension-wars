@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfekdw4svnx3d"]
+[gd_scene load_steps=5 format=3 uid="uid://cfekdw4svnx3d"]
 
 [ext_resource type="Script" uid="uid://bpi5dhp5lj0g1" path="res://actors/entities/Troop.gd" id="1_cp0u3"]
 [ext_resource type="Texture2D" uid="uid://cfsccjhbjh616" path="res://art/fantasy/entities/Fantasy Warrior/Sprites/Idle.png" id="2_pe61s"]
+[ext_resource type="SpriteFrames" uid="uid://bvdnn0vvi7u6x" path="res://reso/sprites/warrior.tres" id="3_cbl00"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pe61s"]
 radius = 13.0
@@ -11,10 +12,13 @@ height = 40.0
 script = ExtResource("1_cp0u3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_pe61s")
 hframes = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_cbl00")
+animation = &"attack"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(32, 0)

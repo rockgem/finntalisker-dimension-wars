@@ -3,7 +3,8 @@ class_name Troop
 
 enum STATE{
 	WALKING,
-	ATTACKING
+	ATTACKING,
+	IDLE
 }
 
 var data = {}
@@ -14,7 +15,10 @@ var state: STATE = STATE.WALKING
 
 
 func _ready() -> void:
-	pass
+	if data.is_empty():
+		return
+	
+	$AnimatedSprite2D.sprite_frames = load(data['sprite_frame'])
 
 
 func _physics_process(delta: float) -> void:
@@ -24,8 +28,11 @@ func _physics_process(delta: float) -> void:
 	match state:
 		STATE.WALKING:
 			global_position.x += data['move_speed'] * delta
+			$AnimatedSprite2D.play("run")
 		STATE.ATTACKING:
-			pass
+			$AnimatedSprite2D.play("attack")
+		STATE.IDLE:
+			$AnimatedSprite2D.play("idle")
 
 
 func get_closest():
