@@ -6,6 +6,7 @@
 		"attack_speed": 1.5,
 		"cost": 5.0,
 		"cooldown": 5.0,
+		"range": 32.0,
 		"sprite_frame": "res://reso/sprites/peasant.tres"
 	},
 	"warrior": {
@@ -15,6 +16,7 @@
 		"attack_speed": 1.5,
 		"cost": 25.0,
 		"cooldown": 10.0,
+		"range": 32.0,
 		"sprite_frame": "res://reso/sprites/warrior.tres"
 	},
 	"hunter": {
@@ -24,6 +26,7 @@
 		"attack_speed": 1.5,
 		"cost": 10.0,
 		"cooldown": 15.0,
+		"range": 100.0,
 		"sprite_frame": "res://reso/sprites/hunter.tres"
 	},
 	"swordsman": {
@@ -33,6 +36,7 @@
 		"attack_speed": 1.5,
 		"cost": 15.0,
 		"cooldown": 30.0,
+		"range": 32.0,
 		"sprite_frame": "res://reso/sprites/swordsman.tres"
 	},
 	"amazon": {
@@ -42,6 +46,37 @@
 		"attack_speed": 1.5,
 		"cost": 50.0,
 		"cooldown": 60.0,
+		"range": 32.0,
 		"sprite_frame": "res://reso/sprites/amazon.tres"
+	},
+	"goblin": {
+		"hp": 25,
+		"attack": 10,
+		"move_speed": 40.0,
+		"attack_speed": 1.5,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/goblin.tres"
+	},
+	"flying_demon": {
+		"hp": 25,
+		"attack": 10,
+		"move_speed": 40.0,
+		"attack_speed": 1.5,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/flying_demon.tres"
+	},
+	"mushroom": {
+		"hp": 25,
+		"attack": 10,
+		"move_speed": 40.0,
+		"attack_speed": 1.5,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/mushroom.tres"
 	}
 }

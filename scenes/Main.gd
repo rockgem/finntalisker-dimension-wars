@@ -24,10 +24,16 @@ func _ready() -> void:
 func load_valid_troops():
 	var data = {}
 	
-	for troop in ManagerGame.areas_monsters[world_id]:
+	for troop in ManagerGame.areas_troops[world_id]:
 		data[troop] = ManagerGame.all_entities_data[troop]
 	
 	$UI.load_troops_display(data)
+
+
+func spawn_obj(instance, global_pos):
+	instance.global_position = global_pos
+	
+	add_child(instance)
 
 
 func on_troop_clicked(ref):
@@ -37,3 +43,12 @@ func on_troop_clicked(ref):
 	i.global_position = player_spawn_position
 	
 	add_child(i)
+
+
+func _on_enemy_spawn_timer_timeout() -> void:
+	var random_enemy = ManagerGame.areas_monsters[world_id].pick_random()
+	var i = load('res://actors/entities/Troop.tscn').instantiate()
+	i.data = ManagerGame.all_entities_data[random_enemy]
+	i.set_as_enemy()
+	
+	spawn_obj(i, Vector2(600.0, player_spawn_position.y))

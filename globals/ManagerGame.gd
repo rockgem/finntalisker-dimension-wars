@@ -4,8 +4,11 @@ extends Node
 signal troop_clicked(ref)
 
 
-var areas_monsters = {
+var areas_troops = {
 	"fantasy": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon']
+}
+var areas_monsters = {
+	"fantasy": ['goblin', 'flying_demon', 'mushroom']
 }
 
 var all_entities_data = {}
