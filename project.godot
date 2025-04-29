@@ -36,6 +36,18 @@ naming/script_name_casing=1
 
 Troop=""
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="PlayerCast"
+2d_physics/layer_3="EnemyCast"
+2d_physics/layer_4="PlayerArea"
+2d_physics/layer_5="EnemyArea"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

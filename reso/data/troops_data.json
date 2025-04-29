@@ -2,7 +2,7 @@
 	"peasant": {
 		"hp": 25,
 		"attack": 10,
-		"move_speed": 80.0,
+		"move_speed": 50.0,
 		"attack_speed": 1.5,
 		"cost": 5.0,
 		"cooldown": 5.0
@@ -10,7 +10,7 @@
 	"warrior": {
 		"hp": 25,
 		"attack": 10,
-		"move_speed": 80.0,
+		"move_speed": 35.0,
 		"attack_speed": 1.5,
 		"cost": 25.0,
 		"cooldown": 10.0
@@ -18,7 +18,7 @@
 	"hunter": {
 		"hp": 25,
 		"attack": 10,
-		"move_speed": 80.0,
+		"move_speed": 55.0,
 		"attack_speed": 1.5,
 		"cost": 10.0,
 		"cooldown": 15.0
@@ -26,7 +26,7 @@
 	"swordsman": {
 		"hp": 25,
 		"attack": 10,
-		"move_speed": 80.0,
+		"move_speed": 30.0,
 		"attack_speed": 1.5,
 		"cost": 15.0,
 		"cooldown": 30.0
@@ -34,7 +34,7 @@
 	"amazon": {
 		"hp": 25,
 		"attack": 10,
-		"move_speed": 80.0,
+		"move_speed": 25.0,
 		"attack_speed": 1.5,
 		"cost": 50.0,
 		"cooldown": 60.0

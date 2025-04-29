@@ -6,7 +6,7 @@ enum STATE{
 	ATTACKING
 }
 
-
+var data = {}
 var is_player = true
 
 var target_ref = null
@@ -18,7 +18,14 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	pass
+	if data.is_empty():
+		return
+	
+	match state:
+		STATE.WALKING:
+			global_position.x += data['move_speed'] * delta
+		STATE.ATTACKING:
+			pass
 
 
 func get_closest():
