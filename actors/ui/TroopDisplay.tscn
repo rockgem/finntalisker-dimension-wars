@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce0k681xxu2oe"]
+
+[ext_resource type="Script" uid="uid://br1ebmy3hc2bd" path="res://actors/ui/TroopDisplay.gd" id="1_ujdwg"]
+[ext_resource type="Texture2D" uid="uid://bqva2evexgyjs" path="res://art/ui/rotate-2.png" id="2_xm7hm"]
+
+[node name="TroopDisplay" type="Panel"]
+custom_minimum_size = Vector2(32, 32)
+size_flags_vertical = 4
+script = ExtResource("1_ujdwg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 17)
+
+[node name="Cooldown" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -12.0
+offset_right = 39.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "250"
+
+[node name="TextureRect" type="TextureRect" parent="Cooldown"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -5.0
+offset_right = -1.0
+offset_bottom = 5.0
+grow_vertical = 2
+texture = ExtResource("2_xm7hm")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
