@@ -67,7 +67,10 @@ func _physics_process(delta: float) -> void:
 
 
 func receive_damage(damage = 1):
-	pass
+	var df = load('res://actors/etc/DamageFloater.tscn').instantiate()
+	df.get_node('Label').text = '%s' % int(damage)
+	
+	add_child(df)
 
 
 func attack():
