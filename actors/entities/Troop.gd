@@ -23,6 +23,8 @@ func _ready() -> void:
 	if data.is_empty():
 		return
 	
+	attack_tick_max = data['attack_speed']
+	
 	$AnimatedSprite2D.sprite_frames = load(data['sprite_frame'])
 	
 	if is_player:
