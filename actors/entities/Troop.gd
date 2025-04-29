@@ -10,36 +10,69 @@ enum STATE{
 var data = {}
 var is_player = true
 
-var target_ref = null
+var target_ref: Troop = null
 var state: STATE = STATE.WALKING
 
 var direction = Vector2.RIGHT
+
+var attack_tick = 0.0
+var attack_tick_max = 0.0
+
 
 func _ready() -> void:
 	if data.is_empty():
 		return
 	
 	$AnimatedSprite2D.sprite_frames = load(data['sprite_frame'])
-	$RayCast2D.target_position.x = data['range']
+	
+	if is_player:
+		$RayCast2D.target_position.x = data['range']
+	else:
+		$RayCast2D.target_position.x = -data['range']
 
 
 func _physics_process(delta: float) -> void:
 	if data.is_empty():
 		return
 	
+	if $RayCast2D.is_colliding():
+		target_ref = $RayCast2D.get_collider().get_parent()
+	else:
+		target_ref = null
+	
 	if target_ref and is_instance_valid(target_ref):
-		
-		
-		return
+		state = STATE.ATTACKING
+	else:
+		state = STATE.WALKING
 	
 	match state:
 		STATE.WALKING:
 			global_position.x += data['move_speed'] * direction.x * delta
 			$AnimatedSprite2D.play("run")
 		STATE.ATTACKING:
-			$AnimatedSprite2D.play("attack")
+			attack_tick += delta
+			
+			if attack_tick >= attack_tick_max:
+				$AnimatedSprite2D.play("attack")
+				await $AnimatedSprite2D.animation_finished
+				target_ref.receive_damage(data['attack'])
+				
+				attack_tick = 0.0
+			
+			$AnimatedSprite2D.play("idle")
 		STATE.IDLE:
 			$AnimatedSprite2D.play("idle")
+
+
+func receive_damage(damage = 1):
+	pass
+
+
+func attack():
+	if target_ref == null or is_instance_valid(target_ref) == false:
+		return
+	
+	
 
 
 func get_closest():
