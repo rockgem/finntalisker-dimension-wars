@@ -1,15 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce0k681xxu2oe"]
+[gd_scene load_steps=5 format=3 uid="uid://ce0k681xxu2oe"]
 
 [ext_resource type="Script" uid="uid://br1ebmy3hc2bd" path="res://actors/ui/TroopDisplay.gd" id="1_ujdwg"]
+[ext_resource type="SpriteFrames" uid="uid://bvdnn0vvi7u6x" path="res://reso/sprites/warrior.tres" id="2_lqa51"]
 [ext_resource type="Texture2D" uid="uid://bqva2evexgyjs" path="res://art/ui/rotate-2.png" id="2_xm7hm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqa51"]
+bg_color = Color(0.677049, 0.590007, 0.402708, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="TroopDisplay" type="Panel"]
 custom_minimum_size = Vector2(32, 32)
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_lqa51")
 script = ExtResource("1_ujdwg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, 17)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(17, 14)
+scale = Vector2(0.604938, 0.604938)
+sprite_frames = ExtResource("2_lqa51")
+animation = &"idle"
 
 [node name="Cooldown" type="Label" parent="."]
 layout_mode = 1
@@ -37,4 +49,8 @@ texture = ExtResource("2_xm7hm")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
