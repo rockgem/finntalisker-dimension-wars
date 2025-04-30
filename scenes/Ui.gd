@@ -5,6 +5,10 @@ func _ready() -> void:
 	ManagerGame.new_wave_initiated.connect(on_new_wave_initiated)
 
 
+func _physics_process(delta: float) -> void:
+	$DimensionProgress/NextDimension.visible = true if ManagerGame.global_game_ref.dimension_progress >= 100.0 else false
+
+
 func load_troops_display(troops_data: Dictionary):
 	for child in $TroopDisplayBox.get_children():
 		child.queue_free()

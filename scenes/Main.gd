@@ -29,6 +29,7 @@ var current_enemies_ref = []
 
 func _ready() -> void:
 	ManagerGame.troop_clicked.connect(on_troop_clicked)
+	ManagerGame.portal_destroyed.connect(on_portal_destroyed)
 	
 	ManagerGame.global_game_ref = self
 	
@@ -37,21 +38,26 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if portal_hp <= 0.0:
+		ManagerGame.portal_destroyed.emit()
+		return
+	
 	$Portal/HP.value = portal_hp
 	$UI/DimensionProgress.value = dimension_progress
 	$UI/DimensionProgress/Percentage.text = '%0.01f%%' % dimension_progress
 	$UI/DimensionProgress/Wave.text = 'Wave %s' % int(wave)
 	
 	# constantly check if all enemies are cleared
-	var has_active = false
-	for enemy in current_enemies_ref:
-		if is_instance_valid(enemy):
-			has_active = true
-			break
-	
-	if has_active == false:
-		current_enemies_ref.clear()
-		spawn_enemy_wave()
+	if dimension_progress < 100:
+		var has_active = false
+		for enemy in current_enemies_ref:
+			if is_instance_valid(enemy):
+				has_active = true
+				break
+		
+		if has_active == false:
+			current_enemies_ref.clear()
+			spawn_enemy_wave()
 
 
 func spawn_enemy_wave():
@@ -101,3 +107,9 @@ func on_troop_clicked(ref):
 	i.global_position = player_spawn_position
 	
 	add_child(i)
+
+
+func on_portal_destroyed():
+	var i = load('res://actors/ui/GameOverView.tscn').instantiate()
+	
+	ManagerGame.pop_to_ui.emit(i)
