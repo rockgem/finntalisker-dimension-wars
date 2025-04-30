@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djfmrcl465w6a"
-path="res://.godot/imported/Attack3.png-37deb32b97f7ecde017049e44db72460.ctex"
+uid="uid://cg0cekvm6clmc"
+path="res://.godot/imported/battleback10.png-874c45382e440293fb8c5c56c4d0bd49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/fantasy/entities/Mushroom/Attack3.png"
-dest_files=["res://.godot/imported/Attack3.png-37deb32b97f7ecde017049e44db72460.ctex"]
+source_file="res://art/fantasy/world/battleback10.png"
+dest_files=["res://.godot/imported/battleback10.png-874c45382e440293fb8c5c56c4d0bd49.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://byouqlibg3hv1"]
+[gd_resource type="SpriteFrames" load_steps=27 format=3 uid="uid://byouqlibg3hv1"]
 
 [ext_resource type="Texture2D" uid="uid://ddqn6de1jv88a" path="res://art/fantasy/entities/Goblin/Attack3.png" id="1_gahuf"]
+[ext_resource type="Texture2D" uid="uid://bwlvtkqfj0ots" path="res://art/fantasy/entities/Goblin/Bomb_sprite.png" id="2_e3mpr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3mpr"]
 atlas = ExtResource("1_gahuf")
@@ -49,6 +50,46 @@ region = Rect2(1500, 0, 150, 150)
 [sub_resource type="AtlasTexture" id="AtlasTexture_q87ck"]
 atlas = ExtResource("1_gahuf")
 region = Rect2(1650, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7xxt"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yprjy"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1000, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_416ea"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjdcm"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21f5t"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkm7f"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qda5r"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j06xc"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61c03"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvmxg"]
+atlas = ExtResource("2_e3mpr")
+region = Rect2(1800, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tg4ic"]
 atlas = ExtResource("1_gahuf")
@@ -101,10 +142,40 @@ animations = [{
 "name": &"attack",
 "speed": 10.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7xxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yprjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_416ea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjdcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21f5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkm7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qda5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j06xc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61c03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvmxg")
+}],
 "loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,

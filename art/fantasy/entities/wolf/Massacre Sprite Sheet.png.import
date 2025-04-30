@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3xw5sysyrwe5"
-path="res://.godot/imported/Projectile_sprite.png-50a7654f5d7d95e05e0e7cbc6bbf1a83.ctex"
+uid="uid://d1lkc5omjipxy"
+path="res://.godot/imported/Massacre Sprite Sheet.png-7be5d45e073194d765543511d76c2a06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/fantasy/entities/Mushroom/Projectile_sprite.png"
-dest_files=["res://.godot/imported/Projectile_sprite.png-50a7654f5d7d95e05e0e7cbc6bbf1a83.ctex"]
+source_file="res://art/fantasy/entities/wolf/Massacre Sprite Sheet.png"
+dest_files=["res://.godot/imported/Massacre Sprite Sheet.png-7be5d45e073194d765543511d76c2a06.ctex"]
 
 [params]
 
