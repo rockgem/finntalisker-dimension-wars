@@ -33,6 +33,8 @@ func _ready() -> void:
 	
 	ManagerGame.global_game_ref = self
 	
+	$Background/TextureRect2.texture = load(ManagerGame.areas_config[world_id]['background'])
+	
 	load_valid_troops()
 	spawn_enemy_wave()
 

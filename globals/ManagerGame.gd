@@ -10,6 +10,15 @@ signal pop_to_ui(instance)
 signal fader_step_finished
 signal fader_finished
 
+var areas_config = {
+	"fantasy": {
+		"background": "res://art/fantasy/world/battleback10.png"
+	},
+	"cyberpunk": {
+		"background": "res://art/fantasy/world/battleback10.png"
+	},
+}
+
 
 var areas_troops = {
 	"fantasy": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon'],
