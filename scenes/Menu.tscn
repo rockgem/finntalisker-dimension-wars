@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bixheu62c1otk"]
+[gd_scene load_steps=3 format=3 uid="uid://bixheu62c1otk"]
 
 [ext_resource type="Script" uid="uid://ch7i3u8vvlr0v" path="res://scenes/Menu.gd" id="1_xdvgc"]
+[ext_resource type="Texture2D" uid="uid://yftjks4mr38i" path="res://art/fantasy/world/battleback5.png" id="2_upctu"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,15 +12,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xdvgc")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.625597, 0.625597, 0.625597, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_upctu")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -119.0
-offset_top = 17.0
+offset_top = 31.0
 offset_right = 119.0
-offset_bottom = 40.0
+offset_bottom = 54.0
 grow_horizontal = 2
 text = "Dimension Wars"
 horizontal_alignment = 1
