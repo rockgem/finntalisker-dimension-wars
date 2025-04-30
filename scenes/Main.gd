@@ -3,12 +3,12 @@ class_name Game
 
 
 var eras = [
-	'cyberpunk',
 	'fantasy',
+	'cyberpunk',
 	'zombie',
 ]
 
-var world_id = 'fantasy'
+@onready var world_id = eras[ManagerGame.current_world_idx]
 var troops = []
 
 var dimension_progress = 0.0
@@ -116,3 +116,8 @@ func on_portal_destroyed():
 	var i = load('res://actors/ui/GameOverView.tscn').instantiate()
 	
 	ManagerGame.pop_to_ui.emit(i)
+
+
+func _on_next_dimension_pressed() -> void:
+	ManagerGame.current_world_idx += 1
+	get_tree().change_scene_to_file('res://scenes/Main.tscn')

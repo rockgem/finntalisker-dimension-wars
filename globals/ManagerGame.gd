@@ -7,23 +7,43 @@ signal portal_destroyed
 signal dimension_finished
 signal pop_to_ui(instance)
 
+signal fader_step_finished
+signal fader_finished
+
 
 var areas_troops = {
-	"fantasy": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon']
+	"fantasy": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon'],
+	"cyberpunk": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon'],
 }
 var areas_monsters = {
-	"fantasy": ['goblin', 'flying_demon', 'wolf']
+	"fantasy": ['goblin', 'flying_demon', 'wolf'],
+	"cyberpunk": ['robot_dog', 'tank', 'cyborg']
 }
 
 var all_entities_data = {}
 
+var current_world_idx = 0 # used in changing dimensions, keeps track of which dimension we are
 var global_game_ref: Game = null
 
+var fader_duration = 1.0
 
 func _ready() -> void:
 	pop_to_ui.connect(on_pop_to_ui)
 	
 	all_entities_data = get_data("res://reso/data/troops_data.json")
+
+
+func fade():
+	var mat = $CanvasLayer/Fader.get('material')
+	var t = create_tween()
+	t.step_finished.connect(on_step_finished)
+	
+	t.tween_property(mat, 'shader_parameter/progress', 1.0, fader_duration)
+	t.tween_property(mat, 'shader_parameter/progress', 0.0, fader_duration)
+
+
+func on_step_finished(idx):
+	fader_step_finished.emit()
 
 
 func get_data(path):

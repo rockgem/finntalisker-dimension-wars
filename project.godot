@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="finntalisker-dimension-wars"
-run/main_scene="uid://d6bdm2tr3ba2"
+run/main_scene="uid://bixheu62c1otk"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
