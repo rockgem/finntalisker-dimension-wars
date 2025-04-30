@@ -15,7 +15,7 @@ var areas_config = {
 		"background": "res://art/fantasy/world/battleback10.png"
 	},
 	"cyberpunk": {
-		"background": "res://art/fantasy/world/battleback10.png"
+		"background": "res://art/cyberpunk/world/battleback8.png"
 	},
 }
 
