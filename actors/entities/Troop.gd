@@ -30,6 +30,8 @@ func _ready() -> void:
 	if is_player:
 		$RayCast2D.target_position.x = data['range']
 	else:
+		data['hp'] *= ManagerGame.global_game_ref.difficulty_scale
+		data['attack'] *= ManagerGame.global_game_ref.difficulty_scale
 		$RayCast2D.target_position.x = -data['range']
 
 
@@ -55,18 +57,23 @@ func _physics_process(delta: float) -> void:
 			global_position.x += data['move_speed'] * direction.x * delta
 			$AnimatedSprite2D.play("run")
 		STATE.ATTACKING:
+			# we don't execute anything in this block when we are in "attack" animation
+			# weird shit happens if this check does not exists
+			if $AnimatedSprite2D.animation == 'attack':
+				return
+			
+			$AnimatedSprite2D.play("idle")
 			attack_tick += delta
 			
 			if attack_tick >= attack_tick_max:
+				attack_tick = 0.0
 				$AnimatedSprite2D.play("attack")
+				
 				await $AnimatedSprite2D.animation_finished
 				
 				if is_instance_valid(target_ref):
 					target_ref.receive_damage(data['attack'])
-				
-				attack_tick = 0.0
-			
-			$AnimatedSprite2D.play("idle")
+				$AnimatedSprite2D.play("idle")
 		STATE.IDLE:
 			$AnimatedSprite2D.play("idle")
 
@@ -78,16 +85,17 @@ func receive_damage(damage = 1):
 	add_child(df)
 	
 	data['hp'] -= damage
+	print(data['hp'])
 	
 	if data['hp'] <= 0:
 		death()
 
 
-func attack():
-	if target_ref == null or is_instance_valid(target_ref) == false:
-		return
-	
-	
+#func attack():
+	#if target_ref == null or is_instance_valid(target_ref) == false:
+		#return
+	#
+	#
 
 
 func death():

@@ -13,7 +13,7 @@ var areas_monsters = {
 
 var all_entities_data = {}
 
-var global_game_ref = null
+var global_game_ref: Game = null
 
 
 func _ready() -> void:
