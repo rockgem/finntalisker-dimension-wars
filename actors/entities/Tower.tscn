@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr3dvibh1feqh"]
+
+[ext_resource type="Texture2D" uid="uid://hrt0mfyuu8ry" path="res://art/fantasy/objs/Sniper Tower.png" id="1_ewmvh"]
+[ext_resource type="Script" uid="uid://ctplt7rb8f4qs" path="res://actors/entities/Tower.gd" id="2_i3t3l"]
+
+[node name="Tower" type="Sprite2D"]
+texture = ExtResource("1_ewmvh")
+script = ExtResource("2_i3t3l")

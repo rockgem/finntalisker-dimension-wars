@@ -12,10 +12,12 @@ signal fader_finished
 
 var areas_config = {
 	"fantasy": {
-		"background": "res://art/fantasy/world/battleback10.png"
+		"background": "res://art/fantasy/world/battleback10.png",
+		"tower_sprite": "res://art/fantasy/objs/Sniper Tower.png"
 	},
 	"cyberpunk": {
-		"background": "res://art/cyberpunk/world/battleback9.png"
+		"background": "res://art/cyberpunk/world/battleback9.png",
+		"tower_sprite": "res://art/fantasy/objs/Sniper Tower.png"
 	},
 }
 
