@@ -18,12 +18,14 @@ var player_spawn_position = Vector2(36, 204)
 var enemy_spawn_count_min = 3
 var enemy_spawn_count_max = 4
 var wave = 0
-var wave_max = 10
 
 # this is used to scale enemies' hp and overall attack damage
 # ( see spawn_enemy_wave() function )
 var difficulty_scale = 1.0 
 
+# an array where we can reference to every enemy in the scene
+# over a certain period, this will get populated will null references so
+# we need to clear this array everytime we spawn a new set of enemies ( see: spawn_enemy_wave() function )
 var current_enemies_ref = []
 
 
@@ -33,6 +35,7 @@ func _ready() -> void:
 	
 	ManagerGame.global_game_ref = self
 	
+	# we change the textures of objects according to the era/theme we are on
 	$Background/TextureRect2.texture = load(ManagerGame.areas_config[world_id]['background'])
 	$Tower.texture = load(ManagerGame.areas_config[world_id]['tower_sprite'])
 	
@@ -82,6 +85,8 @@ func spawn_enemy_wave():
 			current_enemies_ref.append(e)
 
 
+# loading only the available and troops on a certain era/theme
+# ( see ManagerGame -> areas_troops[] )
 func load_valid_troops():
 	var data = {}
 	
@@ -100,16 +105,17 @@ func spawn_obj(instance, global_pos):
 func spawn_enemy():
 	var random_enemy = ManagerGame.areas_monsters[world_id].pick_random()
 	var i = load('res://actors/entities/Troop.tscn').instantiate()
-	i.data = ManagerGame.all_entities_data[random_enemy].duplicate()
+	i.data = ManagerGame.all_entities_data[random_enemy].duplicate() # do not forget to duplicate() the data or else it will just modify the original one!
 	i.set_as_enemy()
 	
 	spawn_obj(i, Vector2(randf_range(600.0, 700.0), player_spawn_position.y))
 
 
+# this runs when the signal to spawn a hero is emitted
 func on_troop_clicked(ref):
 	var i = load('res://actors/entities/Troop.tscn').instantiate()
 	i.is_player = true
-	i.data = ref.data.duplicate()
+	i.data = ref.data.duplicate() # do not forget to duplicate() the data or else it will just modify the original one!
 	i.global_position = player_spawn_position
 	
 	add_child(i)

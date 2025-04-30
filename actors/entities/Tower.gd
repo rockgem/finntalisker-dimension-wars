@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 				closest = enemy
 	
 	if closest:
+		# still check if the closest enemy is within range
 		if global_position.distance_to(closest.global_position) < range:
 			target = closest
 	
@@ -33,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	
 	tick += delta
 	
+	# only shoot when target is not null
 	if tick > tick_max and target:
 		shoot()
 		tick = 0.0

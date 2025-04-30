@@ -89,3 +89,7 @@ text = "Retry"
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "Main Menu"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="pressed" from="Panel/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
