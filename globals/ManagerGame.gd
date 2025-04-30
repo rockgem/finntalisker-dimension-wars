@@ -13,6 +13,8 @@ var areas_monsters = {
 
 var all_entities_data = {}
 
+var global_game_ref = null
+
 
 func _ready() -> void:
 	all_entities_data = get_data("res://reso/data/troops_data.json")

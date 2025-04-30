@@ -11,6 +11,8 @@ var world_id = 'fantasy'
 var troops = []
 
 var money = 100
+var dimension_progress = 0.0
+var portal_hp = 100.0
 
 var player_spawn_position = Vector2(36, 204)
 
@@ -18,7 +20,13 @@ var player_spawn_position = Vector2(36, 204)
 func _ready() -> void:
 	ManagerGame.troop_clicked.connect(on_troop_clicked)
 	
+	ManagerGame.global_game_ref = self
+	
 	load_valid_troops()
+
+
+func _physics_process(delta: float) -> void:
+	$Portal/HP.value = portal_hp
 
 
 func load_valid_troops():

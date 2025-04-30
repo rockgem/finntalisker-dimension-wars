@@ -47,6 +47,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_3="EnemyCast"
 2d_physics/layer_4="PlayerArea"
 2d_physics/layer_5="EnemyArea"
+2d_physics/layer_6="PortalArea"
 
 [rendering]
 
