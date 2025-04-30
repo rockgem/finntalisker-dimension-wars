@@ -11,6 +11,7 @@ var world_id = 'fantasy'
 var troops = []
 
 var money = 100
+var wave = 1
 var dimension_progress = 0.0
 var portal_hp = 100.0
 
@@ -27,6 +28,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	$Portal/HP.value = portal_hp
+	$UI/DimensionProgress.value = dimension_progress
+	$UI/DimensionProgress/Percentage.text = '%0.01f%%' % dimension_progress
 
 
 func load_valid_troops():
@@ -44,6 +47,15 @@ func spawn_obj(instance, global_pos):
 	add_child(instance)
 
 
+func spawn_enemy():
+	var random_enemy = ManagerGame.areas_monsters[world_id].pick_random()
+	var i = load('res://actors/entities/Troop.tscn').instantiate()
+	i.data = ManagerGame.all_entities_data[random_enemy]
+	i.set_as_enemy()
+	
+	spawn_obj(i, Vector2(600.0, player_spawn_position.y))
+
+
 func on_troop_clicked(ref):
 	var i = load('res://actors/entities/Troop.tscn').instantiate()
 	i.is_player = true
@@ -51,12 +63,3 @@ func on_troop_clicked(ref):
 	i.global_position = player_spawn_position
 	
 	add_child(i)
-
-
-func _on_enemy_spawn_timer_timeout() -> void:
-	var random_enemy = ManagerGame.areas_monsters[world_id].pick_random()
-	var i = load('res://actors/entities/Troop.tscn').instantiate()
-	i.data = ManagerGame.all_entities_data[random_enemy]
-	i.set_as_enemy()
-	
-	spawn_obj(i, Vector2(600.0, player_spawn_position.y))
