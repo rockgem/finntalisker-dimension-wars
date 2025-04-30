@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://dwaoa2snmspky"]
+[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://dwaoa2snmspky"]
 
 [ext_resource type="Texture2D" uid="uid://tdjm0b55i3kf" path="res://art/fantasy/entities/Medieval Warrior Pack 3/Medieval Warrior Pack 3/Sprites/Attack1.png" id="1_l8cgb"]
+[ext_resource type="Texture2D" uid="uid://dqpfc7yedoyij" path="res://art/fantasy/entities/Medieval Warrior Pack 3/Medieval Warrior Pack 3/Sprites/Death.png" id="2_88vvx"]
 [ext_resource type="Texture2D" uid="uid://dqp5hfn0mr0eg" path="res://art/fantasy/entities/Medieval Warrior Pack 3/Medieval Warrior Pack 3/Sprites/Idle.png" id="2_gruim"]
 [ext_resource type="Texture2D" uid="uid://dl30rns46myf7" path="res://art/fantasy/entities/Medieval Warrior Pack 3/Medieval Warrior Pack 3/Sprites/Run.png" id="3_88vvx"]
 
@@ -19,6 +20,42 @@ region = Rect2(270, 0, 135, 135)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6keps"]
 atlas = ExtResource("1_l8cgb")
 region = Rect2(405, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geeno"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(0, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv7ok"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(135, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_511n4"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(270, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x6bi"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(405, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfrpd"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(540, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1xx2"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(675, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27a4s"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(810, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dgfg"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(945, 0, 135, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vovyh"]
+atlas = ExtResource("2_88vvx")
+region = Rect2(1080, 0, 135, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t36sy"]
 atlas = ExtResource("2_gruim")
@@ -102,6 +139,38 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geeno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv7ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_511n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2x6bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfrpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1xx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27a4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dgfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vovyh")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,

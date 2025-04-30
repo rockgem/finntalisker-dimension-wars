@@ -99,6 +99,11 @@ animations = [{
 "name": &"attack",
 "speed": 10.0
 }, {
+"frames": [],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wqn4j")

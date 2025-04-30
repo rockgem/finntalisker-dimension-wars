@@ -38,7 +38,10 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if $RayCast2D.is_colliding():
-		target_ref = $RayCast2D.get_collider().get_parent()
+		if is_instance_valid($RayCast2D.get_collider()):
+			target_ref = $RayCast2D.get_collider().get_parent()
+		else:
+			target_ref = null
 	else:
 		target_ref = null
 	
@@ -57,7 +60,9 @@ func _physics_process(delta: float) -> void:
 			if attack_tick >= attack_tick_max:
 				$AnimatedSprite2D.play("attack")
 				await $AnimatedSprite2D.animation_finished
-				target_ref.receive_damage(data['attack'])
+				
+				if is_instance_valid(target_ref):
+					target_ref.receive_damage(data['attack'])
 				
 				attack_tick = 0.0
 			
@@ -71,6 +76,11 @@ func receive_damage(damage = 1):
 	df.get_node('Label').text = '%s' % int(damage)
 	
 	add_child(df)
+	
+	data['hp'] -= damage
+	
+	if data['hp'] <= 0:
+		death()
 
 
 func attack():
@@ -78,6 +88,15 @@ func attack():
 		return
 	
 	
+
+
+func death():
+	set_physics_process(false)
+	$AnimatedSprite2D.play('death')
+	
+	await $AnimatedSprite2D.animation_finished
+	
+	queue_free()
 
 
 func get_closest():
