@@ -88,6 +88,7 @@ func _physics_process(delta: float) -> void:
 
 func receive_damage(damage = 1):
 	var df = load('res://actors/etc/DamageFloater.tscn').instantiate()
+	df.position.x = randf_range(-8, 8)
 	df.get_node('Label').text = '%s' % int(damage)
 	
 	add_child(df)
@@ -111,6 +112,10 @@ func death():
 	$AnimatedSprite2D.play('death')
 	
 	await $AnimatedSprite2D.animation_finished
+	
+	# gains progress when killing an enemy
+	if is_player == false:
+		ManagerGame.global_game_ref.dimension_progress += randf_range(.5, 1.5)
 	
 	queue_free()
 
