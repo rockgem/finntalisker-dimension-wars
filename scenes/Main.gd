@@ -16,8 +16,8 @@ var portal_hp = 100.0
 
 var player_spawn_position = Vector2(36, 204)
 var enemy_spawn_count_min = 3
-var enemy_spawn_count_max = 5
-var wave = 1
+var enemy_spawn_count_max = 4
+var wave = 0
 var wave_max = 10
 
 # this is used to scale enemies' hp and overall attack damage
@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	$Portal/HP.value = portal_hp
 	$UI/DimensionProgress.value = dimension_progress
 	$UI/DimensionProgress/Percentage.text = '%0.01f%%' % dimension_progress
+	$UI/DimensionProgress/Wave.text = 'Wave %s' % int(wave)
 	
 	# constantly check if all enemies are cleared
 	var has_active = false
@@ -54,6 +55,9 @@ func _physics_process(delta: float) -> void:
 
 
 func spawn_enemy_wave():
+	print('New Wave Initiated!')
+	ManagerGame.new_wave_initiated.emit()
+	
 	wave += 1
 	enemy_spawn_count_max += 1
 	difficulty_scale += 0.1

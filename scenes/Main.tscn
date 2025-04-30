@@ -410,6 +410,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 8
 text = "40%"
 
+[node name="Wave" type="Label" parent="UI/DimensionProgress"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_right = 43.0
+offset_bottom = 15.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 7
+text = "Wave 99"
+
 [node name="Portal" type="AnimatedSprite2D" parent="."]
 position = Vector2(45, 196)
 scale = Vector2(1.38, 1.38)

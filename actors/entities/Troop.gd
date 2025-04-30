@@ -56,6 +56,14 @@ func _physics_process(delta: float) -> void:
 		STATE.WALKING:
 			global_position.x += data['move_speed'] * direction.x * delta
 			$AnimatedSprite2D.play("run")
+			
+			if is_player:
+				if global_position.x > get_viewport().get_visible_rect().size.x:
+					queue_free()
+			else:
+				if global_position.x < ManagerGame.global_game_ref.player_spawn_position.x:
+					ManagerGame.global_game_ref.portal_hp -= 5
+					queue_free()
 		STATE.ATTACKING:
 			# we don't execute anything in this block when we are in "attack" animation
 			# weird shit happens if this check does not exists

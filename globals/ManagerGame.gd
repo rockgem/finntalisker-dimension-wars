@@ -2,6 +2,7 @@ extends Node
 
 
 signal troop_clicked(ref)
+signal new_wave_initiated
 
 
 var areas_troops = {

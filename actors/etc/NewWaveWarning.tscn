@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfr32svnqief8"]
+
+[ext_resource type="Script" uid="uid://gckdjsq5f3yn" path="res://actors/etc/NewWaveWarning.gd" id="1_m7pui"]
+
+[sub_resource type="Animation" id="Animation_0km3x"]
+resource_name = "new_animation"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0872665, -0.0872665, 0.0872665, -0.0872665]
+}
+
+[sub_resource type="Animation" id="Animation_m7pui"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m7pui"]
+_data = {
+&"RESET": SubResource("Animation_m7pui"),
+&"new_animation": SubResource("Animation_0km3x")
+}
+
+[node name="NewWaveWarning" type="Node2D"]
+rotation = 0.0872665
+script = ExtResource("1_m7pui")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -11.5
+offset_right = 81.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.708024, 0.485279, 0.187707, 1)
+theme_override_colors/font_outline_color = Color(0.838897, 0.838897, 0.838897, 1)
+theme_override_constants/outline_size = 8
+text = "New Wave Incoming!"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m7pui")
+}
+autoplay = "new_animation"
