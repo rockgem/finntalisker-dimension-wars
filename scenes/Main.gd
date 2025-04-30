@@ -42,6 +42,9 @@ func _physics_process(delta: float) -> void:
 		ManagerGame.portal_destroyed.emit()
 		return
 	
+	if dimension_progress >= 100.0:
+		ManagerGame.dimension_finished.emit()
+	
 	$Portal/HP.value = portal_hp
 	$UI/DimensionProgress.value = dimension_progress
 	$UI/DimensionProgress/Percentage.text = '%0.01f%%' % dimension_progress
