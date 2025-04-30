@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciemdt7wcgl2w"
-path="res://.godot/imported/battleback8.png-db90b2e6695148d961884cd556fb45fc.ctex"
+uid="uid://wce7n3cxr6rt"
+path="res://.godot/imported/battleback9.png-e2a3e4ff979776946a7e45a591deaeb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cyberpunk/world/battleback8.png"
-dest_files=["res://.godot/imported/battleback8.png-db90b2e6695148d961884cd556fb45fc.ctex"]
+source_file="res://art/cyberpunk/world/battleback9.png"
+dest_files=["res://.godot/imported/battleback9.png-e2a3e4ff979776946a7e45a591deaeb3.ctex"]
 
 [params]
 

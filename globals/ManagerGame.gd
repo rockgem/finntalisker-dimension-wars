@@ -15,7 +15,7 @@ var areas_config = {
 		"background": "res://art/fantasy/world/battleback10.png"
 	},
 	"cyberpunk": {
-		"background": "res://art/cyberpunk/world/battleback8.png"
+		"background": "res://art/cyberpunk/world/battleback9.png"
 	},
 }
 
@@ -31,7 +31,7 @@ var areas_monsters = {
 
 var all_entities_data = {}
 
-var current_world_idx = 0 # used in changing dimensions, keeps track of which dimension we are
+var current_world_idx = 1 # used in changing dimensions, keeps track of which dimension we are
 var global_game_ref: Game = null
 
 var fader_duration = 1.0
