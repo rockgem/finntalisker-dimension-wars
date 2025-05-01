@@ -472,4 +472,8 @@ shape = SubResource("CircleShape2D_vcsgt")
 [node name="Tower" parent="." instance=ExtResource("6_c01mt")]
 position = Vector2(102, 142)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(232, 152)
+zoom = Vector2(1.1, 1.1)
+
 [connection signal="pressed" from="UI/DimensionProgress/NextDimension" to="." method="_on_next_dimension_pressed"]
