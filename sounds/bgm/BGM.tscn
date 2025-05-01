@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d33daeghbyrkt"]
+
+[ext_resource type="Script" uid="uid://cocwwaixomlb8" path="res://sounds/bgm/Bgm.gd" id="1_dk7lq"]
+[ext_resource type="AudioStream" uid="uid://b1nh2pwn0wia8" path="res://sounds/bgm/battle.mp3" id="2_0vaw7"]
+
+[node name="Bgm" type="Node"]
+process_mode = 3
+script = ExtResource("1_dk7lq")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0vaw7")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqgoptjejsyk1"]
+
+[ext_resource type="Script" path="res://sounds/sfx/Sfx.gd" id="1_bviw1"]
+[ext_resource type="AudioStream" uid="uid://c8af3onbdiutd" path="res://sounds/sfx/completetask_0.mp3" id="4_j34dr"]
+[ext_resource type="AudioStream" uid="uid://b4w28cb6uu61w" path="res://sounds/sfx/Pop2.wav" id="6_mp4b3"]
+[ext_resource type="AudioStream" uid="uid://cg5kblyu06tpm" path="res://sounds/sfx/Click9.wav" id="14_wnslh"]
+
+[node name="Sfx" type="Node"]
+process_mode = 3
+script = ExtResource("1_bviw1")
+
+[node name="Pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mp4b3")
+
+[node name="Chime" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j34dr")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mp4b3")
+pitch_scale = 1.21
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_wnslh")
+pitch_scale = 0.59
