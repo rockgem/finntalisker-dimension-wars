@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dx03oqpml2w0u" path="res://sounds/sfx/Sfx.gd" id="1_bviw1"]
 [ext_resource type="AudioStream" uid="uid://c8af3onbdiutd" path="res://sounds/sfx/completetask_0.mp3" id="4_j34dr"]
 [ext_resource type="AudioStream" uid="uid://dp0n1as2gymvm" path="res://sounds/sfx/swing.wav" id="5_m3upf"]
-[ext_resource type="AudioStream" uid="uid://dhfmuuv3hyy4k" path="res://sounds/sfx/bfh1_hit_03.ogg" id="6_41r37"]
+[ext_resource type="AudioStream" uid="uid://bbukb865hfrud" path="res://sounds/sfx/Socapex - new_hits_2.wav" id="6_41r37"]
 [ext_resource type="AudioStream" uid="uid://b4w28cb6uu61w" path="res://sounds/sfx/Pop2.wav" id="6_mp4b3"]
 [ext_resource type="AudioStream" uid="uid://cg5kblyu06tpm" path="res://sounds/sfx/Click9.wav" id="14_wnslh"]
 
