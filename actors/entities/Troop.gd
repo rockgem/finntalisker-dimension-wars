@@ -80,6 +80,8 @@ func _physics_process(delta: float) -> void:
 				await $AnimatedSprite2D.animation_finished
 				
 				if is_instance_valid(target_ref):
+					Sfx.play_sound('Slash')
+					
 					target_ref.receive_damage(data['attack'])
 				$AnimatedSprite2D.play("idle")
 		STATE.IDLE:
@@ -95,6 +97,8 @@ func receive_damage(damage = 1):
 	
 	data['hp'] -= damage
 	print(data['hp'])
+	
+	Sfx.play_sound('Hit')
 	
 	if data['hp'] <= 0:
 		death()

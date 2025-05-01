@@ -33,6 +33,8 @@ func _on_gui_input(event: InputEvent) -> void:
 		$Timer.start()
 		is_cooldown = true
 		ManagerGame.troop_clicked.emit(self)
+		
+		Sfx.play_sound('Click')
 
 
 func _on_timer_timeout() -> void:

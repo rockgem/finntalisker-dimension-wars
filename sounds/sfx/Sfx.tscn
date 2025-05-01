@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqgoptjejsyk1"]
+[gd_scene load_steps=7 format=3 uid="uid://bqgoptjejsyk1"]
 
-[ext_resource type="Script" path="res://sounds/sfx/Sfx.gd" id="1_bviw1"]
+[ext_resource type="Script" uid="uid://dx03oqpml2w0u" path="res://sounds/sfx/Sfx.gd" id="1_bviw1"]
 [ext_resource type="AudioStream" uid="uid://c8af3onbdiutd" path="res://sounds/sfx/completetask_0.mp3" id="4_j34dr"]
+[ext_resource type="AudioStream" uid="uid://dp0n1as2gymvm" path="res://sounds/sfx/swing.wav" id="5_m3upf"]
+[ext_resource type="AudioStream" uid="uid://dhfmuuv3hyy4k" path="res://sounds/sfx/bfh1_hit_03.ogg" id="6_41r37"]
 [ext_resource type="AudioStream" uid="uid://b4w28cb6uu61w" path="res://sounds/sfx/Pop2.wav" id="6_mp4b3"]
 [ext_resource type="AudioStream" uid="uid://cg5kblyu06tpm" path="res://sounds/sfx/Click9.wav" id="14_wnslh"]
 
@@ -22,3 +24,13 @@ pitch_scale = 1.21
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_wnslh")
 pitch_scale = 0.59
+
+[node name="Slash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m3upf")
+pitch_scale = 0.59
+max_polyphony = 10
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_41r37")
+pitch_scale = 0.59
+max_polyphony = 10
