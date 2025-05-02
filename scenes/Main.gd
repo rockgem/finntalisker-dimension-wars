@@ -36,8 +36,8 @@ func _ready() -> void:
 	ManagerGame.global_game_ref = self
 	
 	# we change the textures of objects according to the era/theme we are on
-	$Background/TextureRect2.texture = load(ManagerGame.areas_config[world_id]['background'])
-	$Tower.texture = load(ManagerGame.areas_config[world_id]['tower_sprite'])
+	$Container/Background.texture = load(ManagerGame.areas_config[world_id]['background'])
+	$Container/Tower.texture = load(ManagerGame.areas_config[world_id]['tower_sprite'])
 	
 	load_valid_troops()
 	spawn_enemy_wave()
@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 	if dimension_progress >= 100.0:
 		ManagerGame.dimension_finished.emit()
 	
-	$Portal/HP.value = portal_hp
+	$Container/Portal/HP.value = portal_hp
 	$UI/DimensionProgress.value = dimension_progress
 	$UI/DimensionProgress/Percentage.text = '%0.01f%%' % dimension_progress
 	$UI/DimensionProgress/Wave.text = 'Wave %s' % int(wave)
@@ -67,6 +67,11 @@ func _physics_process(delta: float) -> void:
 		if has_active == false:
 			current_enemies_ref.clear()
 			spawn_enemy_wave()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventScreenDrag:
+		$Container.position.x += event.relative.x
 
 
 func spawn_enemy_wave():
@@ -99,7 +104,7 @@ func load_valid_troops():
 func spawn_obj(instance, global_pos):
 	instance.global_position = global_pos
 	
-	add_child(instance)
+	$Container.add_child(instance)
 
 
 func spawn_enemy():
@@ -108,7 +113,7 @@ func spawn_enemy():
 	i.data = ManagerGame.all_entities_data[random_enemy].duplicate() # do not forget to duplicate() the data or else it will just modify the original one!
 	i.set_as_enemy()
 	
-	spawn_obj(i, Vector2(randf_range(600.0, 700.0), player_spawn_position.y))
+	spawn_obj(i, $Container/EnemySpawnPoint.global_position)
 
 
 # this runs when the signal to spawn a hero is emitted
@@ -116,9 +121,10 @@ func on_troop_clicked(ref):
 	var i = load('res://actors/entities/Troop.tscn').instantiate()
 	i.is_player = true
 	i.data = ref.data.duplicate() # do not forget to duplicate() the data or else it will just modify the original one!
-	i.global_position = player_spawn_position
 	
-	add_child(i)
+	
+	$Container.add_child(i)
+	i.global_position = $Container/SpawnPoint.global_position
 
 
 func on_portal_destroyed():

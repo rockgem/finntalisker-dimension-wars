@@ -322,6 +322,7 @@ script = ExtResource("1_elqb8")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 
 [node name="TextureRect2" type="TextureRect" parent="Background"]
 anchors_preset = 15
@@ -441,14 +442,22 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 8
 text = "Go to next dimension"
 
-[node name="Portal" type="AnimatedSprite2D" parent="."]
+[node name="Container" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Container"]
+z_index = -5
+position = Vector2(263, 144)
+scale = Vector2(0.502415, 0.502415)
+texture = ExtResource("3_c01mt")
+
+[node name="Portal" type="AnimatedSprite2D" parent="Container"]
 position = Vector2(45, 196)
 scale = Vector2(1.38, 1.38)
 sprite_frames = SubResource("SpriteFrames_s3wmy")
 autoplay = "default"
 frame_progress = 0.954836
 
-[node name="HP" type="ProgressBar" parent="Portal"]
+[node name="HP" type="ProgressBar" parent="Container/Portal"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -462,18 +471,24 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_jlsqs")
 value = 40.0
 show_percentage = false
 
-[node name="Area2D" type="Area2D" parent="Portal"]
+[node name="Area2D" type="Area2D" parent="Container/Portal"]
 collision_layer = 32
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Container/Portal/Area2D"]
 shape = SubResource("CircleShape2D_vcsgt")
 
-[node name="Tower" parent="." instance=ExtResource("6_c01mt")]
+[node name="Tower" parent="Container" instance=ExtResource("6_c01mt")]
 position = Vector2(102, 142)
 
+[node name="SpawnPoint" type="Node2D" parent="Container"]
+position = Vector2(45, 196)
+
+[node name="EnemySpawnPoint" type="Node2D" parent="Container"]
+position = Vector2(515, 196)
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(232, 152)
-zoom = Vector2(1.1, 1.1)
+position = Vector2(221, 149)
+zoom = Vector2(1.2, 1.2)
 
 [connection signal="pressed" from="UI/DimensionProgress/NextDimension" to="." method="_on_next_dimension_pressed"]
