@@ -72,6 +72,11 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventScreenDrag:
 		$Container.position.x += event.relative.x
+		
+		if $Container.global_position.x < -93.0:
+			$Container.global_position.x = -93.0
+		if $Container.global_position.x > 0:
+			$Container.global_position.x = 0.0
 
 
 func spawn_enemy_wave():
