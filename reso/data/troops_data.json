@@ -109,24 +109,34 @@
 		"range": 200.0,
 		"sprite_frame": "res://reso/sprites/cyborg.tres"
 	},
-	"swordsman": {
-		"hp": 25,
-		"attack": 12,
-		"move_speed": 30.0,
-		"attack_speed": 1.5,
-		"cost": 15.0,
-		"cooldown": 30.0,
-		"range": 32.0,
-		"sprite_frame": "res://reso/sprites/swordsman.tres"
-	},
-	"amazon": {
-		"hp": 55,
-		"attack": 14,
-		"move_speed": 40.0,
-		"attack_speed": 2.0,
+	"rioter": {
+		"hp": 4,
+		"attack": 2,
+		"move_speed": 65.0,
+		"attack_speed": 1.0,
 		"cost": 50.0,
 		"cooldown": 60.0,
 		"range": 32.0,
-		"sprite_frame": "res://reso/sprites/amazon.tres"
+		"sprite_frame": "res://reso/sprites/rioter.tres"
 	},
+	"flying_robot": {
+		"hp": 8,
+		"attack": 4,
+		"move_speed": 40.0,
+		"attack_speed": 1.5,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/flying_robot.tres"
+	},
+	"robot": {
+		"hp": 25,
+		"attack": 2,
+		"move_speed": 25.0,
+		"attack_speed": 0.4,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/robot.tres"
+	}
 }
