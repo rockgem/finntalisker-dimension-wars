@@ -24,11 +24,11 @@ var areas_config = {
 
 var areas_troops = {
 	"fantasy": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon'],
-	"cyberpunk": ['robo_cop', 'robo_dog', 'cyborg', 'hacker', 'gunner'],
+	"cyberpunk": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon'],
 }
 var areas_monsters = {
 	"fantasy": ['goblin', 'flying_demon', 'wolf'],
-	"cyberpunk": ['robo_leopard', 'tank', 'cyclops']
+	"cyberpunk": ['goblin', 'flying_demon', 'wolf']
 }
 
 var all_entities_data = {}
