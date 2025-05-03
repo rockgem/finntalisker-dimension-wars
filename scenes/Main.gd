@@ -141,3 +141,9 @@ func on_portal_destroyed():
 func _on_next_dimension_pressed() -> void:
 	ManagerGame.current_world_idx += 1
 	get_tree().change_scene_to_file('res://scenes/Main.tscn')
+
+
+func _on_pause_pressed() -> void:
+	var i = load('res://actors/ui/PausePopup.tscn').instantiate()
+	
+	ManagerGame.pop_to_ui.emit(i)

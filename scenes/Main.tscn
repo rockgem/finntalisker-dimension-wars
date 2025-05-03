@@ -442,6 +442,18 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 8
 text = "Go to next dimension"
 
+[node name="Pause" type="Button" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_top = 6.0
+offset_right = -5.0
+offset_bottom = 26.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 8
+text = "Pause"
+
 [node name="Container" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Container"]
@@ -492,3 +504,4 @@ position = Vector2(221, 149)
 zoom = Vector2(1.2, 1.2)
 
 [connection signal="pressed" from="UI/DimensionProgress/NextDimension" to="." method="_on_next_dimension_pressed"]
+[connection signal="pressed" from="UI/Pause" to="." method="_on_pause_pressed"]
