@@ -138,5 +138,25 @@
 		"cooldown": 60.0,
 		"range": 32.0,
 		"sprite_frame": "res://reso/sprites/robot.tres"
+	},
+	"robo_cop": {
+		"hp": 25,
+		"attack": 12,
+		"move_speed": 30.0,
+		"attack_speed": 1.5,
+		"cost": 15.0,
+		"cooldown": 30.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/robo_cop.tres"
+	},
+	"mech_vampire": {
+		"hp": 55,
+		"attack": 14,
+		"move_speed": 40.0,
+		"attack_speed": 2.0,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/mech_vampire.tres"
 	}
 }

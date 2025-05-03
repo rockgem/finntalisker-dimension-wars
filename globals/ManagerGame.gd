@@ -24,7 +24,7 @@ var areas_config = {
 
 var areas_troops = {
 	"fantasy": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon'],
-	"cyberpunk": ['punk', 'biker', 'cyborg'],
+	"cyberpunk": ['punk', 'biker', 'cyborg', 'robo_cop', 'mech_vampire'],
 }
 var areas_monsters = {
 	"fantasy": ['goblin', 'flying_demon', 'wolf'],
