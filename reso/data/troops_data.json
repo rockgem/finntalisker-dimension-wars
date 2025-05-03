@@ -78,5 +78,55 @@
 		"cooldown": 60.0,
 		"range": 32.0,
 		"sprite_frame": "res://reso/sprites/wolf.tres"
-	}
+	},
+	"punk": {
+		"hp": 8,
+		"attack": 2,
+		"move_speed": 50.0,
+		"attack_speed": 0.8,
+		"cost": 5.0,
+		"cooldown": 5.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/punk.tres"
+	},
+	"biker": {
+		"hp": 15,
+		"attack": 6,
+		"move_speed": 35.0,
+		"attack_speed": 2.0,
+		"cost": 25.0,
+		"cooldown": 10.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/biker.tres"
+	},
+	"cyborg": {
+		"hp": 5,
+		"attack": 2,
+		"move_speed": 55.0,
+		"attack_speed": 1.0,
+		"cost": 10.0,
+		"cooldown": 15.0,
+		"range": 200.0,
+		"sprite_frame": "res://reso/sprites/cyborg.tres"
+	},
+	"swordsman": {
+		"hp": 25,
+		"attack": 12,
+		"move_speed": 30.0,
+		"attack_speed": 1.5,
+		"cost": 15.0,
+		"cooldown": 30.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/swordsman.tres"
+	},
+	"amazon": {
+		"hp": 55,
+		"attack": 14,
+		"move_speed": 40.0,
+		"attack_speed": 2.0,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/amazon.tres"
+	},
 }
