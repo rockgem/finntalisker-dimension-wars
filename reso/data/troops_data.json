@@ -158,5 +158,35 @@
 		"cooldown": 60.0,
 		"range": 32.0,
 		"sprite_frame": "res://reso/sprites/mech_vampire.tres"
-	}
+	},
+	"zombie": {
+		"hp": 4,
+		"attack": 2,
+		"move_speed": 65.0,
+		"attack_speed": 1.0,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/zombie.tres"
+	},
+	"boomer": {
+		"hp": 8,
+		"attack": 4,
+		"move_speed": 40.0,
+		"attack_speed": 1.5,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/boomer.tres"
+	},
+	"tank": {
+		"hp": 25,
+		"attack": 2,
+		"move_speed": 25.0,
+		"attack_speed": 0.4,
+		"cost": 50.0,
+		"cooldown": 60.0,
+		"range": 32.0,
+		"sprite_frame": "res://reso/sprites/tank.tres"
+	},
 }

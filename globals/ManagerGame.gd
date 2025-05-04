@@ -19,16 +19,22 @@ var areas_config = {
 		"background": "res://art/cyberpunk/world/battleback9.png",
 		"tower_sprite": "res://art/fantasy/objs/Sniper Tower.png"
 	},
+	"zombie": {
+		"background": "res://art/zombie/world/battleback5.png",
+		"tower_sprite": "res://art/fantasy/objs/Sniper Tower.png"
+	},
 }
 
 
 var areas_troops = {
 	"fantasy": ['peasant', 'warrior', 'hunter', 'swordsman', 'amazon'],
 	"cyberpunk": ['punk', 'biker', 'cyborg', 'robo_cop', 'mech_vampire'],
+	"zombie": ['punk', 'biker', 'swordsman', 'peasant', 'hunter'],
 }
 var areas_monsters = {
 	"fantasy": ['goblin', 'flying_demon', 'wolf'],
-	"cyberpunk": ['rioter', 'flying_robot', 'robot']
+	"cyberpunk": ['rioter', 'flying_robot', 'robot'],
+	"zombie": ['zombie', 'boomer', 'tank']
 }
 
 var all_entities_data = {}

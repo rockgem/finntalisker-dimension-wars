@@ -8,7 +8,7 @@ var eras = [
 	'zombie',
 ]
 
-@onready var world_id = eras[ManagerGame.current_world_idx]
+@onready var world_id = eras[2]
 var troops = []
 
 var dimension_progress = 0.0
